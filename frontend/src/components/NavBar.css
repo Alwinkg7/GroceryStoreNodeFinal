@@ -1,0 +1,9 @@
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #222; color: #fff; }
+.nav a { color: #fff; margin-right: 12px; text-decoration: none; }
+.nav .brand { font-weight: 700; margin-right: 16px; }
+.nav .nav-left, .nav .nav-right { display: flex; align-items: center; gap: 10px; }
+.btn { background: #444; color: #fff; border: none; padding: 6px 10px; cursor: pointer; border-radius: 4px; }
+.btn:hover { background: #555; }
+.user { opacity: 0.85; }
+
+
