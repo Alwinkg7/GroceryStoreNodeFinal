@@ -44,11 +44,13 @@ import path from "path";
 const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
-  // Serve static frontend files
-  app.use(express.static(path.join(__dirname, "../frontend/dist"))); // use 'build' if CRA
+  const __dirname = path.resolve();
+  const frontendPath = path.join(__dirname, "../frontend/dist"); // CRA: replace 'dist' with 'build'
+  
+  app.use(express.static(frontendPath));
 
-  // Catch all routes and send index.html
-  app.get("/*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
+  // Use a function for catch-all route
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
   });
 }
