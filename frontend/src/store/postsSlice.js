@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+const API = import.meta.env.VITE_API_BASE_URL || "https://grocerystorenodefinal-5.onrender.com";
 
 function authHeader() {
   const token = localStorage.getItem("authToken") || "";
