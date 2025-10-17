@@ -44,12 +44,11 @@ const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
-  const frontendPath = path.join(__dirname, "../frontend/dist"); // CRA: replace 'dist' with 'build'
-  
+  const frontendPath = path.join(__dirname, "../frontend/dist"); // or 'build' for CRA
   app.use(express.static(frontendPath));
 
-  // Use a function for catch-all route
-  app.get("/", (req, res) => {
+  // Catch-all route for React Router
+  app.get(/^\/(?!api|auth).*/, (req, res) => {
     res.sendFile(path.join(frontendPath, "index.html"));
   });
 }
