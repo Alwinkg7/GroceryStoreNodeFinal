@@ -54,3 +54,9 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(frontendPath, "index.html"));
   });
 }
+
+import cors from "cors";
+app.use(cors({
+  origin: "https://grocerystore-tau.vercel.app",
+  credentials: true
+}));
