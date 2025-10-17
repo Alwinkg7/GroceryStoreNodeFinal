@@ -11,7 +11,6 @@ import { protect } from "./middleware/authMiddleware.js"; // import protect midd
 
 dotenv.config();
 const app = express();
-app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
@@ -55,7 +54,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-import cors from "cors";
 app.use(cors({
   origin: "https://grocerystore-tau.vercel.app",
   credentials: true
