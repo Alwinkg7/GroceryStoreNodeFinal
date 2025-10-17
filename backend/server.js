@@ -23,16 +23,16 @@ mongoose
 app.get("/", (req, res) => res.send("Running!"));
 
 // Auth routes: register & login
-app.use("/api/auth", authRoutes);
+app.use("/auth", authRoutes);
 
 // User routes (list users, get by id, delete user)
-app.use("/api/users", userRoutes);
+app.use("/users", userRoutes);
 
 // Post routes
 // GET routes are public
-app.use("/api/posts", postRoutes);
+app.use("/posts", postRoutes);
 
-app.use("/api/posts", commentRoutes);
+app.use("/posts", commentRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
