@@ -28,7 +28,7 @@ export function isOwner(post, user) {
 }
 
 export async function loginAndFetchToken(authorId) {
-  const res = await fetch((import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api") + "/login", {
+  const res = await fetch((import.meta.env.VITE_API_BASE_URL || "https://grocerystorenodefinal-5.onrender.com") + "/login", {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ authorId })
