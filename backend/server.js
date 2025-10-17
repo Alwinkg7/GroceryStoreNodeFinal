@@ -57,3 +57,9 @@ app.use(cors({
   origin: "https://grocerystore-tau.vercel.app",
   credentials: true
 }));
+
+// Handle preflight requests
+app.options("*", cors({
+  origin: "https://grocerystore-tau.vercel.app",
+  credentials: true
+}));
